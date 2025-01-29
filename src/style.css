@@ -1,0 +1,28 @@
+#hgContainer {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 260px 0 60px;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+#hgContainer::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15,15,15,0.8);
+  content: "";
+}
+
+#hgApp {
+  z-index: 1;
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #4f4d45;
+}
