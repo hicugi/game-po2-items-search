@@ -1,11 +1,14 @@
 import { localTradeData } from '../data/main.js';
+import { localTradeItems } from '../data/items.js';
 
-const TRADE_DATA_KEY = 'lscache-trade2data';
-
-export const getTradeData = () => {
-  if (localStorage.getItem(TRADE_DATA_KEY)) {
-    return JSON.parse(localStorage.getItem(TRADE_DATA_KEY));
+export const getData = (key, data) => {
+  if (localStorage.getItem(key)) {
+    return JSON.parse(localStorage.getItem(key));
   }
 
-  return localTradeData;
+  return data;
 }
+
+export const getTradeData = () => getData('lscache-trade2data', localTradeData);
+export const getTradeItems = () => getData('lscache-trade2items', localTradeItems);
+

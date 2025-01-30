@@ -1,0 +1,104 @@
+.c-inventory {
+  position: relative;
+  margin: 0 auto;
+  max-width: 872px;
+  background: url("img/inventory.jpg") no-repeat center;
+  background-size: 100% auto;
+}
+.c-inventory::before {
+  padding-top: 75.57%;
+  display: block;
+  content: "";
+}
+
+.c-inventory button {
+  position: absolute;
+  border: none;
+  background: none;
+  background-color: rgba(0,255,0,0);
+  color: transparent;
+  transition: linear .1s;
+}
+.c-inventory button:hover {
+  background-color: rgba(0,255,0,0.1);
+}
+
+.c-inventory button[name="weapon"],
+.c-inventory button[name="weapon2"] {
+  width: 150px;
+  height: 290px;
+}
+.c-inventory button[name="weapon"] {
+  left: 86px;
+  top: 37px;
+}
+.c-inventory button[name="weapon2"] {
+  left: 636px;
+  top: 37px;
+}
+
+.c-inventory button[name="helmet"],
+.c-inventory button[name="gloves"],
+.c-inventory button[name="boots"] {
+  width: 150px;
+  height: 150px;
+}
+
+.c-inventory button[name="helmet"] {
+  left: 361px;
+  top: 20px;
+}
+.c-inventory button[name="gloves"] {
+  left: 188px;
+  top: 334px;
+}
+.c-inventory button[name="boots"] {
+  left: 534px;
+  top: 334px;
+}
+
+.c-inventory button[name="armor"] {
+  left: 361px;
+  top: 177px;
+  width: 150px;
+  height: 220px;
+}
+.c-inventory button[name="belt"] {
+  left: 361px;
+  top: 404px;
+  width: 150px;
+  height: 80px;
+}
+
+.c-inventory button[name="flaskHealth"],
+.c-inventory button[name="flaskMana"] {
+  top: 493px;
+  width: 80px;
+  height: 145px;
+}
+.c-inventory button[name="flaskHealth"] {
+  left: 222px;
+}
+.c-inventory button[name="flaskMana"] {
+  left: 570px;
+}
+
+.c-inventory button[name="amulet"],
+.c-inventory button[name="ring1"],
+.c-inventory button[name="ring2"] {
+  width: 80px;
+  height: 80px;
+}
+.c-inventory button[name="amulet"] {
+  left: 535px;
+  top: 160px;
+}
+.c-inventory button[name="ring1"] {
+  left: 259px;
+  top: 247px;
+}
+.c-inventory button[name="ring2"] {
+  left: 535px;
+  top: 247px;
+}
+

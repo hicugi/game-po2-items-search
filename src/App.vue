@@ -1,14 +1,12 @@
 <script setup>
 import { ref } from 'vue';
-import { getTradeData } from './stores/trade';
-
-const data = ref(getTradeData());
+import Inventory from './components/Inventory.vue';
 </script>
 
 <template>
   <div>
-    <h1>Pretty filters from Hicugi</h1>
-    <pre>{{ data }}</pre>
+    <h2>Select category from the inventory</h2>
+    <Inventory />
   </div>
 </template>
 
