@@ -70,13 +70,13 @@
   height: 80px;
 }
 
-.c-inventory button[name="flaskHealth"],
+.c-inventory button[name="flaskLife"],
 .c-inventory button[name="flaskMana"] {
   top: 493px;
   width: 80px;
   height: 145px;
 }
-.c-inventory button[name="flaskHealth"] {
+.c-inventory button[name="flaskLife"] {
   left: 222px;
 }
 .c-inventory button[name="flaskMana"] {

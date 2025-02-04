@@ -6,23 +6,42 @@
   padding: 260px 0 60px;
   width: 100%;
   height: 100%;
+  box-sizing: border-box;
   overflow-y: auto;
+  font-family: sans-serif;
 }
 
 #hgContainer::before {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(15,15,15,0.8);
+  background-color: rgba(15, 15, 15, 0.8);
   content: "";
 }
 
 #hgApp {
+  --bgc1: #0b0909;
+  --bgc2: #3b3529;
+  --bgc3: #0e0c0b;
+  --bgc4: #050303;
+  --bgc5: #12120e;
+  --bgc6: #100e0c;
+  --bgc7: #090807;
+  --bgc: #050505;
+
   z-index: 1;
   position: relative;
   max-width: 900px;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: var(--bgc);
+  box-shadow:
+    0 0 0 1px var(--bgc7),
+    0 0 0 2px var(--bgc6),
+    0 0 0 3px var(--bgc5),
+    0 0 0 4px var(--bgc4),
+    0 0 0 5px var(--bgc3),
+    0 0 0 6px var(--bgc2),
+    0 0 0 7px var(--bgc1);
 }
