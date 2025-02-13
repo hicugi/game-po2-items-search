@@ -1,12 +1,14 @@
 <script setup>
+import { ref } from 'vue';
+
 import Header from './components/Header.vue';
 import Inventory from './components/Inventory.vue';
-import { getTradeItems } from './stores/trade';
+import Search from './components/Search/index.vue';
 
-const items = getTradeItems();
+const category = ref(null);
 
 function handleSelect(key) {
-  console.log(key, items[key]);
+  category.value = key;
 }
 </script>
 
@@ -14,6 +16,8 @@ function handleSelect(key) {
   <div>
     <Header title="Select category" />
     <Inventory @select="handleSelect" />
+
+    <Search v-if="category" v-bind="{ category }" />
   </div>
 </template>
 

@@ -9,34 +9,20 @@ export const getData = (key, data) => {
   return data;
 };
 
+let tradeItems = null;
+
 export const getTradeData = () => getData("lscache-trade2data", localTradeData);
 export const getTradeItems = () => {
+  if (tradeItems) return tradeItems;
+
   const data = getData("lscache-trade2items", localTradeItems);
 
-  const result = {
-    weapon: [],
-    weapon2: [],
+  const result = {};
 
-    amulet: [],
-    ring: [],
-    belt: [],
-
-    helmet: [],
-    gloves: [],
-    armor: [],
-
-    boots: [],
-
-    flaskLife: [],
-    flaskMana: [],
-    charm: [],
-
-    currency: [],
-    gem: [],
-    jewel: [],
-    map: [],
-    sanctum: [], // relic
-  };
+  const insert = (key, value) => {
+    if (result[key] === undefined) result[key] = new Set();
+    result[key].add(value);
+  }
 
   const assign = (entries, links) => {
     for (const elm of entries) {
@@ -49,7 +35,7 @@ export const getTradeItems = () => {
         continue;
       }
 
-      result[key].push(elm);
+      insert(key, elm);
     }
   };
 
@@ -61,7 +47,7 @@ export const getTradeItems = () => {
       case "map":
       case "weapon":
       case "sanctum":
-        result[item.id] = item.entries;
+        result[item.id] = new Set(item.entries);
         break;
       case "accessory":
         assign(item.entries, { ulet: "amulet", Ring: "ring", Belt: "belt" });
@@ -84,7 +70,7 @@ export const getTradeItems = () => {
             continue;
           }
 
-          result[key ?? key2].push(elm);
+          insert(key ?? key2, elm);
         }
         break;
 
@@ -140,5 +126,10 @@ export const getTradeItems = () => {
     }
   }
 
-  return result;
+  tradeItems = {};
+  for (const key in result) {
+    tradeItems[key] = Array.from(result[key]);
+  }
+
+  return tradeItems;
 };
